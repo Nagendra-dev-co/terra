@@ -1,0 +1,3395 @@
+{
+  "source": {
+    "type": "image",
+    "image": {
+      "name": "mysql",
+      "digest": "sha256:ae2502152260b33bfafb9c3e3a1811086317e0236abf83a59503cec0f8980573",
+      "tags": [
+        "latest"
+      ],
+      "manifest": {
+        "schemaVersion": 2,
+        "mediaType": "application/vnd.docker.distribution.manifest.v2+json",
+        "config": {
+          "mediaType": "application/vnd.docker.container.image.v1+json",
+          "size": 6596,
+          "digest": "sha256:ae2502152260b33bfafb9c3e3a1811086317e0236abf83a59503cec0f8980573"
+        },
+        "layers": [
+          {
+            "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+            "size": 109644288,
+            "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+          },
+          {
+            "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+            "size": 11264,
+            "digest": "sha256:c72f3f81b567fdd7b95cfd31bf307c987456794078ef71d40e6118651aef5d14"
+          },
+          {
+            "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+            "size": 2358784,
+            "digest": "sha256:65fbb26b2addd2de9838b4c8d591f3fdd57bc7164c481ecd9456da9c0763b4f2"
+          },
+          {
+            "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+            "size": 13795328,
+            "digest": "sha256:75f4b9038bd6e88a327c1d096b1bca95afc013b95b025fd39dbc8f24dc94f949"
+          },
+          {
+            "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+            "size": 6656,
+            "digest": "sha256:bfaf0b67d6ce2f96fef6f7a688e4532a3315c541b84f3c591923d3cdec40887e"
+          },
+          {
+            "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+            "size": 3072,
+            "digest": "sha256:2e06436073e8594b4023c21e5b0f0b76fbbc92b7e9bb4e98c5ef441e9e66629b"
+          },
+          {
+            "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+            "size": 186049536,
+            "digest": "sha256:2eb38469d663239c4b14de8bd835905076bcc440215630746ed4f6443f90de50"
+          },
+          {
+            "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+            "size": 3072,
+            "digest": "sha256:a4c6bd236e101758eb436792d67e8b132a9be20ac10f2afede226a595cadaa23"
+          },
+          {
+            "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+            "size": 277352448,
+            "digest": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860"
+          },
+          {
+            "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+            "size": 17408,
+            "digest": "sha256:e0bb8d70ab73c045343f85e0c0765327ea0fb6c6e0329ceab309db08e3fdd51d"
+          }
+        ]
+      },
+      "config": {
+        "architecture": "amd64",
+        "created": "2023-07-27T22:18:51Z",
+        "history": [
+          {
+            "created": "2023-07-27T22:18:51Z",
+            "created_by": "/bin/sh -c #(nop) ADD file:0f45bdf93b14a2ab9389b71d23b6c7f6d2935c8016e3b6422814f8fc79bef986 in / "
+          },
+          {
+            "created": "2023-07-27T22:18:51Z",
+            "created_by": "/bin/sh -c #(nop)  CMD [\"/bin/bash\"]",
+            "empty_layer": true
+          },
+          {
+            "created": "2023-07-27T22:18:51Z",
+            "created_by": "RUN /bin/sh -c set -eux; \tgroupadd --system --gid 999 mysql; \tuseradd --system --uid 999 --gid 999 --home-dir /var/lib/mysql --no-create-home mysql # buildkit",
+            "comment": "buildkit.dockerfile.v0"
+          },
+          {
+            "created": "2023-07-27T22:18:51Z",
+            "created_by": "ENV GOSU_VERSION=1.16",
+            "comment": "buildkit.dockerfile.v0",
+            "empty_layer": true
+          },
+          {
+            "created": "2023-07-27T22:18:51Z",
+            "created_by": "RUN /bin/sh -c set -eux; \tarch=\"$(uname -m)\"; \tcase \"$arch\" in \t\taarch64) gosuArch='arm64' ;; \t\tx86_64) gosuArch='amd64' ;; \t\t*) echo \u003e\u00262 \"error: unsupported architecture: '$arch'\"; exit 1 ;; \tesac; \tcurl -fL -o /usr/local/bin/gosu.asc \"https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$gosuArch.asc\"; \tcurl -fL -o /usr/local/bin/gosu \"https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$gosuArch\"; \texport GNUPGHOME=\"$(mktemp -d)\"; \tgpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; \tgpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; \trm -rf \"$GNUPGHOME\" /usr/local/bin/gosu.asc; \tchmod +x /usr/local/bin/gosu; \tgosu --version; \tgosu nobody true # buildkit",
+            "comment": "buildkit.dockerfile.v0"
+          },
+          {
+            "created": "2023-07-27T22:18:51Z",
+            "created_by": "RUN /bin/sh -c set -eux; \tmicrodnf install -y \t\tbzip2 \t\tgzip \t\topenssl \t\txz \t\tzstd \t\tfindutils \t; \tmicrodnf clean all # buildkit",
+            "comment": "buildkit.dockerfile.v0"
+          },
+          {
+            "created": "2023-07-27T22:18:51Z",
+            "created_by": "RUN /bin/sh -c set -eux; \tkey='859BE8D7C586F538430B19C2467B942D3A79BD29'; \texport GNUPGHOME=\"$(mktemp -d)\"; \tgpg --batch --keyserver keyserver.ubuntu.com --recv-keys \"$key\"; \tgpg --batch --export --armor \"$key\" \u003e /etc/pki/rpm-gpg/RPM-GPG-KEY-mysql; \trm -rf \"$GNUPGHOME\" # buildkit",
+            "comment": "buildkit.dockerfile.v0"
+          },
+          {
+            "created": "2023-07-27T22:18:51Z",
+            "created_by": "ENV MYSQL_MAJOR=innovation",
+            "comment": "buildkit.dockerfile.v0",
+            "empty_layer": true
+          },
+          {
+            "created": "2023-07-27T22:18:51Z",
+            "created_by": "ENV MYSQL_VERSION=8.1.0-1.el8",
+            "comment": "buildkit.dockerfile.v0",
+            "empty_layer": true
+          },
+          {
+            "created": "2023-07-27T22:18:51Z",
+            "created_by": "RUN /bin/sh -c set -eu; \t. /etc/os-release; \t{ \t\techo '[mysqlinnovation-server-minimal]'; \t\techo 'name=MySQL innovation Server Minimal'; \t\techo 'enabled=1'; \t\techo \"baseurl=https://repo.mysql.com/yum/mysql-innovation-community/docker/el/${VERSION_ID%%[.-]*}/\\$basearch/\"; \t\techo 'gpgcheck=1'; \t\techo 'gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-mysql'; \t\techo 'module_hotfixes=true'; \t} | tee /etc/yum.repos.d/mysql-community-minimal.repo # buildkit",
+            "comment": "buildkit.dockerfile.v0"
+          },
+          {
+            "created": "2023-07-27T22:18:51Z",
+            "created_by": "RUN /bin/sh -c set -eux; \tmicrodnf install -y \"mysql-community-server-minimal-$MYSQL_VERSION\"; \tmicrodnf clean all; \tgrep -F 'socket=/var/lib/mysql/mysql.sock' /etc/my.cnf; \tsed -i 's!^socket=.*!socket=/var/run/mysqld/mysqld.sock!' /etc/my.cnf; \tgrep -F 'socket=/var/run/mysqld/mysqld.sock' /etc/my.cnf; \t{ echo '[client]'; echo 'socket=/var/run/mysqld/mysqld.sock'; } \u003e\u003e /etc/my.cnf; \t\t! grep -F '!includedir' /etc/my.cnf; \t{ echo; echo '!includedir /etc/mysql/conf.d/'; } \u003e\u003e /etc/my.cnf; \tmkdir -p /etc/mysql/conf.d; \tmkdir -p /var/lib/mysql /var/run/mysqld; \tchown mysql:mysql /var/lib/mysql /var/run/mysqld; \tchmod 1777 /var/lib/mysql /var/run/mysqld; \t\tmkdir /docker-entrypoint-initdb.d; \t\tmysqld --version; \tmysql --version # buildkit",
+            "comment": "buildkit.dockerfile.v0"
+          },
+          {
+            "created": "2023-07-27T22:18:51Z",
+            "created_by": "RUN /bin/sh -c set -eu; \t. /etc/os-release; \t{ \t\techo '[mysql-tools-community]'; \t\techo 'name=MySQL Tools Community'; \t\techo \"baseurl=https://repo.mysql.com/yum/mysql-tools-community/el/${VERSION_ID%%[.-]*}/\\$basearch/\"; \t\techo 'enabled=1'; \t\techo 'gpgcheck=1'; \t\techo 'gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-mysql'; \t\techo 'module_hotfixes=true'; \t} | tee /etc/yum.repos.d/mysql-community-tools.repo # buildkit",
+            "comment": "buildkit.dockerfile.v0"
+          },
+          {
+            "created": "2023-07-27T22:18:51Z",
+            "created_by": "ENV MYSQL_SHELL_VERSION=8.0.34-1.el8",
+            "comment": "buildkit.dockerfile.v0",
+            "empty_layer": true
+          },
+          {
+            "created": "2023-07-27T22:18:51Z",
+            "created_by": "RUN /bin/sh -c set -eux; \tmicrodnf install -y \"mysql-shell-$MYSQL_SHELL_VERSION\"; \tmicrodnf clean all; \t\tmysqlsh --version # buildkit",
+            "comment": "buildkit.dockerfile.v0"
+          },
+          {
+            "created": "2023-07-27T22:18:51Z",
+            "created_by": "VOLUME [/var/lib/mysql]",
+            "comment": "buildkit.dockerfile.v0",
+            "empty_layer": true
+          },
+          {
+            "created": "2023-07-27T22:18:51Z",
+            "created_by": "COPY docker-entrypoint.sh /usr/local/bin/ # buildkit",
+            "comment": "buildkit.dockerfile.v0"
+          },
+          {
+            "created": "2023-07-27T22:18:51Z",
+            "created_by": "ENTRYPOINT [\"docker-entrypoint.sh\"]",
+            "comment": "buildkit.dockerfile.v0",
+            "empty_layer": true
+          },
+          {
+            "created": "2023-07-27T22:18:51Z",
+            "created_by": "EXPOSE map[3306/tcp:{} 33060/tcp:{}]",
+            "comment": "buildkit.dockerfile.v0",
+            "empty_layer": true
+          },
+          {
+            "created": "2023-07-27T22:18:51Z",
+            "created_by": "CMD [\"mysqld\"]",
+            "comment": "buildkit.dockerfile.v0",
+            "empty_layer": true
+          }
+        ],
+        "os": "linux",
+        "rootfs": {
+          "type": "layers",
+          "diff_ids": [
+            "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+            "sha256:c72f3f81b567fdd7b95cfd31bf307c987456794078ef71d40e6118651aef5d14",
+            "sha256:65fbb26b2addd2de9838b4c8d591f3fdd57bc7164c481ecd9456da9c0763b4f2",
+            "sha256:75f4b9038bd6e88a327c1d096b1bca95afc013b95b025fd39dbc8f24dc94f949",
+            "sha256:bfaf0b67d6ce2f96fef6f7a688e4532a3315c541b84f3c591923d3cdec40887e",
+            "sha256:2e06436073e8594b4023c21e5b0f0b76fbbc92b7e9bb4e98c5ef441e9e66629b",
+            "sha256:2eb38469d663239c4b14de8bd835905076bcc440215630746ed4f6443f90de50",
+            "sha256:a4c6bd236e101758eb436792d67e8b132a9be20ac10f2afede226a595cadaa23",
+            "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860",
+            "sha256:e0bb8d70ab73c045343f85e0c0765327ea0fb6c6e0329ceab309db08e3fdd51d"
+          ]
+        },
+        "config": {
+          "Cmd": [
+            "mysqld"
+          ],
+          "Entrypoint": [
+            "docker-entrypoint.sh"
+          ],
+          "Env": [
+            "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+            "GOSU_VERSION=1.16",
+            "MYSQL_MAJOR=innovation",
+            "MYSQL_VERSION=8.1.0-1.el8",
+            "MYSQL_SHELL_VERSION=8.0.34-1.el8"
+          ],
+          "Volumes": {
+            "/var/lib/mysql": {}
+          },
+          "ExposedPorts": {
+            "3306/tcp": {},
+            "33060/tcp": {}
+          },
+          "ArgsEscaped": true
+        }
+      },
+      "raw_manifest": "eyJzY2hlbWFWZXJzaW9uIjoyLCJtZWRpYVR5cGUiOiJhcHBsaWNhdGlvbi92bmQuZG9ja2VyLmRpc3RyaWJ1dGlvbi5tYW5pZmVzdC52Mitqc29uIiwiY29uZmlnIjp7Im1lZGlhVHlwZSI6ImFwcGxpY2F0aW9uL3ZuZC5kb2NrZXIuY29udGFpbmVyLmltYWdlLnYxK2pzb24iLCJzaXplIjo2NTk2LCJkaWdlc3QiOiJzaGEyNTY6YWUyNTAyMTUyMjYwYjMzYmZhZmI5YzNlM2ExODExMDg2MzE3ZTAyMzZhYmY4M2E1OTUwM2NlYzBmODk4MDU3MyJ9LCJsYXllcnMiOlt7Im1lZGlhVHlwZSI6ImFwcGxpY2F0aW9uL3ZuZC5kb2NrZXIuaW1hZ2Uucm9vdGZzLmRpZmYudGFyLmd6aXAiLCJzaXplIjoxMDk2NDQyODgsImRpZ2VzdCI6InNoYTI1NjpkNmZlNjNlOGJlNjNkMDc4YWVlZjk3MzlmMmM3ZWExMDFlNmNjMWEzZjk5OGQxNzlhZjYzYTEwZTdmMGY5NTlkIn0seyJtZWRpYVR5cGUiOiJhcHBsaWNhdGlvbi92bmQuZG9ja2VyLmltYWdlLnJvb3Rmcy5kaWZmLnRhci5nemlwIiwic2l6ZSI6MTEyNjQsImRpZ2VzdCI6InNoYTI1NjpjNzJmM2Y4MWI1NjdmZGQ3Yjk1Y2ZkMzFiZjMwN2M5ODc0NTY3OTQwNzhlZjcxZDQwZTYxMTg2NTFhZWY1ZDE0In0seyJtZWRpYVR5cGUiOiJhcHBsaWNhdGlvbi92bmQuZG9ja2VyLmltYWdlLnJvb3Rmcy5kaWZmLnRhci5nemlwIiwic2l6ZSI6MjM1ODc4NCwiZGlnZXN0Ijoic2hhMjU2OjY1ZmJiMjZiMmFkZGQyZGU5ODM4YjRjOGQ1OTFmM2ZkZDU3YmM3MTY0YzQ4MWVjZDk0NTZkYTljMDc2M2I0ZjIifSx7Im1lZGlhVHlwZSI6ImFwcGxpY2F0aW9uL3ZuZC5kb2NrZXIuaW1hZ2Uucm9vdGZzLmRpZmYudGFyLmd6aXAiLCJzaXplIjoxMzc5NTMyOCwiZGlnZXN0Ijoic2hhMjU2Ojc1ZjRiOTAzOGJkNmU4OGEzMjdjMWQwOTZiMWJjYTk1YWZjMDEzYjk1YjAyNWZkMzlkYmM4ZjI0ZGM5NGY5NDkifSx7Im1lZGlhVHlwZSI6ImFwcGxpY2F0aW9uL3ZuZC5kb2NrZXIuaW1hZ2Uucm9vdGZzLmRpZmYudGFyLmd6aXAiLCJzaXplIjo2NjU2LCJkaWdlc3QiOiJzaGEyNTY6YmZhZjBiNjdkNmNlMmY5NmZlZjZmN2E2ODhlNDUzMmEzMzE1YzU0MWI4NGYzYzU5MTkyM2QzY2RlYzQwODg3ZSJ9LHsibWVkaWFUeXBlIjoiYXBwbGljYXRpb24vdm5kLmRvY2tlci5pbWFnZS5yb290ZnMuZGlmZi50YXIuZ3ppcCIsInNpemUiOjMwNzIsImRpZ2VzdCI6InNoYTI1NjoyZTA2NDM2MDczZTg1OTRiNDAyM2MyMWU1YjBmMGI3NmZiYmM5MmI3ZTliYjRlOThjNWVmNDQxZTllNjY2MjliIn0seyJtZWRpYVR5cGUiOiJhcHBsaWNhdGlvbi92bmQuZG9ja2VyLmltYWdlLnJvb3Rmcy5kaWZmLnRhci5nemlwIiwic2l6ZSI6MTg2MDQ5NTM2LCJkaWdlc3QiOiJzaGEyNTY6MmViMzg0NjlkNjYzMjM5YzRiMTRkZThiZDgzNTkwNTA3NmJjYzQ0MDIxNTYzMDc0NmVkNGY2NDQzZjkwZGU1MCJ9LHsibWVkaWFUeXBlIjoiYXBwbGljYXRpb24vdm5kLmRvY2tlci5pbWFnZS5yb290ZnMuZGlmZi50YXIuZ3ppcCIsInNpemUiOjMwNzIsImRpZ2VzdCI6InNoYTI1NjphNGM2YmQyMzZlMTAxNzU4ZWI0MzY3OTJkNjdlOGIxMzJhOWJlMjBhYzEwZjJhZmVkZTIyNmE1OTVjYWRhYTIzIn0seyJtZWRpYVR5cGUiOiJhcHBsaWNhdGlvbi92bmQuZG9ja2VyLmltYWdlLnJvb3Rmcy5kaWZmLnRhci5nemlwIiwic2l6ZSI6Mjc3MzUyNDQ4LCJkaWdlc3QiOiJzaGEyNTY6MzEwNThhM2VkOTA4OGI1MzdmZWM1MTIyM2Y0M2U1Y2U5MGU4ZjU0OTc3Mzc5MTkyMzkwMmJiZWFiNDcyZDg2MCJ9LHsibWVkaWFUeXBlIjoiYXBwbGljYXRpb24vdm5kLmRvY2tlci5pbWFnZS5yb290ZnMuZGlmZi50YXIuZ3ppcCIsInNpemUiOjE3NDA4LCJkaWdlc3QiOiJzaGEyNTY6ZTBiYjhkNzBhYjczYzA0NTM0M2Y4NWUwYzA3NjUzMjdlYTBmYjZjNmUwMzI5Y2VhYjMwOWRiMDhlM2ZkZDUxZCJ9XX0=",
+      "raw_config": "eyJhcmNoaXRlY3R1cmUiOiJhbWQ2NCIsImNvbmZpZyI6eyJFeHBvc2VkUG9ydHMiOnsiMzMwNi90Y3AiOnt9LCIzMzA2MC90Y3AiOnt9fSwiRW52IjpbIlBBVEg9L3Vzci9sb2NhbC9zYmluOi91c3IvbG9jYWwvYmluOi91c3Ivc2JpbjovdXNyL2Jpbjovc2JpbjovYmluIiwiR09TVV9WRVJTSU9OPTEuMTYiLCJNWVNRTF9NQUpPUj1pbm5vdmF0aW9uIiwiTVlTUUxfVkVSU0lPTj04LjEuMC0xLmVsOCIsIk1ZU1FMX1NIRUxMX1ZFUlNJT049OC4wLjM0LTEuZWw4Il0sIkVudHJ5cG9pbnQiOlsiZG9ja2VyLWVudHJ5cG9pbnQuc2giXSwiQ21kIjpbIm15c3FsZCJdLCJWb2x1bWVzIjp7Ii92YXIvbGliL215c3FsIjp7fX0sIkFyZ3NFc2NhcGVkIjp0cnVlLCJPbkJ1aWxkIjpudWxsfSwiY3JlYXRlZCI6IjIwMjMtMDctMjdUMjI6MTg6NTFaIiwiaGlzdG9yeSI6W3siY3JlYXRlZCI6IjIwMjMtMDctMjdUMjI6MTg6NTFaIiwiY3JlYXRlZF9ieSI6Ii9iaW4vc2ggLWMgIyhub3ApIEFERCBmaWxlOjBmNDViZGY5M2IxNGEyYWI5Mzg5YjcxZDIzYjZjN2Y2ZDI5MzVjODAxNmUzYjY0MjI4MTRmOGZjNzliZWY5ODYgaW4gLyAifSx7ImNyZWF0ZWQiOiIyMDIzLTA3LTI3VDIyOjE4OjUxWiIsImNyZWF0ZWRfYnkiOiIvYmluL3NoIC1jICMobm9wKSAgQ01EIFtcIi9iaW4vYmFzaFwiXSIsImVtcHR5X2xheWVyIjp0cnVlfSx7ImNyZWF0ZWQiOiIyMDIzLTA3LTI3VDIyOjE4OjUxWiIsImNyZWF0ZWRfYnkiOiJSVU4gL2Jpbi9zaCAtYyBzZXQgLWV1eDsgXHRncm91cGFkZCAtLXN5c3RlbSAtLWdpZCA5OTkgbXlzcWw7IFx0dXNlcmFkZCAtLXN5c3RlbSAtLXVpZCA5OTkgLS1naWQgOTk5IC0taG9tZS1kaXIgL3Zhci9saWIvbXlzcWwgLS1uby1jcmVhdGUtaG9tZSBteXNxbCAjIGJ1aWxka2l0IiwiY29tbWVudCI6ImJ1aWxka2l0LmRvY2tlcmZpbGUudjAifSx7ImNyZWF0ZWQiOiIyMDIzLTA3LTI3VDIyOjE4OjUxWiIsImNyZWF0ZWRfYnkiOiJFTlYgR09TVV9WRVJTSU9OPTEuMTYiLCJjb21tZW50IjoiYnVpbGRraXQuZG9ja2VyZmlsZS52MCIsImVtcHR5X2xheWVyIjp0cnVlfSx7ImNyZWF0ZWQiOiIyMDIzLTA3LTI3VDIyOjE4OjUxWiIsImNyZWF0ZWRfYnkiOiJSVU4gL2Jpbi9zaCAtYyBzZXQgLWV1eDsgXHRhcmNoPVwiJCh1bmFtZSAtbSlcIjsgXHRjYXNlIFwiJGFyY2hcIiBpbiBcdFx0YWFyY2g2NCkgZ29zdUFyY2g9J2FybTY0JyA7OyBcdFx0eDg2XzY0KSBnb3N1QXJjaD0nYW1kNjQnIDs7IFx0XHQqKSBlY2hvIFx1MDAzZVx1MDAyNjIgXCJlcnJvcjogdW5zdXBwb3J0ZWQgYXJjaGl0ZWN0dXJlOiAnJGFyY2gnXCI7IGV4aXQgMSA7OyBcdGVzYWM7IFx0Y3VybCAtZkwgLW8gL3Vzci9sb2NhbC9iaW4vZ29zdS5hc2MgXCJodHRwczovL2dpdGh1Yi5jb20vdGlhbm9uL2dvc3UvcmVsZWFzZXMvZG93bmxvYWQvJEdPU1VfVkVSU0lPTi9nb3N1LSRnb3N1QXJjaC5hc2NcIjsgXHRjdXJsIC1mTCAtbyAvdXNyL2xvY2FsL2Jpbi9nb3N1IFwiaHR0cHM6Ly9naXRodWIuY29tL3RpYW5vbi9nb3N1L3JlbGVhc2VzL2Rvd25sb2FkLyRHT1NVX1ZFUlNJT04vZ29zdS0kZ29zdUFyY2hcIjsgXHRleHBvcnQgR05VUEdIT01FPVwiJChta3RlbXAgLWQpXCI7IFx0Z3BnIC0tYmF0Y2ggLS1rZXlzZXJ2ZXIgaGtwczovL2tleXMub3BlbnBncC5vcmcgLS1yZWN2LWtleXMgQjQyRjY4MTkwMDdGMDBGODhFMzY0RkQ0MDM2QTlDMjVCRjM1N0RENDsgXHRncGcgLS1iYXRjaCAtLXZlcmlmeSAvdXNyL2xvY2FsL2Jpbi9nb3N1LmFzYyAvdXNyL2xvY2FsL2Jpbi9nb3N1OyBcdHJtIC1yZiBcIiRHTlVQR0hPTUVcIiAvdXNyL2xvY2FsL2Jpbi9nb3N1LmFzYzsgXHRjaG1vZCAreCAvdXNyL2xvY2FsL2Jpbi9nb3N1OyBcdGdvc3UgLS12ZXJzaW9uOyBcdGdvc3Ugbm9ib2R5IHRydWUgIyBidWlsZGtpdCIsImNvbW1lbnQiOiJidWlsZGtpdC5kb2NrZXJmaWxlLnYwIn0seyJjcmVhdGVkIjoiMjAyMy0wNy0yN1QyMjoxODo1MVoiLCJjcmVhdGVkX2J5IjoiUlVOIC9iaW4vc2ggLWMgc2V0IC1ldXg7IFx0bWljcm9kbmYgaW5zdGFsbCAteSBcdFx0YnppcDIgXHRcdGd6aXAgXHRcdG9wZW5zc2wgXHRcdHh6IFx0XHR6c3RkIFx0XHRmaW5kdXRpbHMgXHQ7IFx0bWljcm9kbmYgY2xlYW4gYWxsICMgYnVpbGRraXQiLCJjb21tZW50IjoiYnVpbGRraXQuZG9ja2VyZmlsZS52MCJ9LHsiY3JlYXRlZCI6IjIwMjMtMDctMjdUMjI6MTg6NTFaIiwiY3JlYXRlZF9ieSI6IlJVTiAvYmluL3NoIC1jIHNldCAtZXV4OyBcdGtleT0nODU5QkU4RDdDNTg2RjUzODQzMEIxOUMyNDY3Qjk0MkQzQTc5QkQyOSc7IFx0ZXhwb3J0IEdOVVBHSE9NRT1cIiQobWt0ZW1wIC1kKVwiOyBcdGdwZyAtLWJhdGNoIC0ta2V5c2VydmVyIGtleXNlcnZlci51YnVudHUuY29tIC0tcmVjdi1rZXlzIFwiJGtleVwiOyBcdGdwZyAtLWJhdGNoIC0tZXhwb3J0IC0tYXJtb3IgXCIka2V5XCIgXHUwMDNlIC9ldGMvcGtpL3JwbS1ncGcvUlBNLUdQRy1LRVktbXlzcWw7IFx0cm0gLXJmIFwiJEdOVVBHSE9NRVwiICMgYnVpbGRraXQiLCJjb21tZW50IjoiYnVpbGRraXQuZG9ja2VyZmlsZS52MCJ9LHsiY3JlYXRlZCI6IjIwMjMtMDctMjdUMjI6MTg6NTFaIiwiY3JlYXRlZF9ieSI6IkVOViBNWVNRTF9NQUpPUj1pbm5vdmF0aW9uIiwiY29tbWVudCI6ImJ1aWxka2l0LmRvY2tlcmZpbGUudjAiLCJlbXB0eV9sYXllciI6dHJ1ZX0seyJjcmVhdGVkIjoiMjAyMy0wNy0yN1QyMjoxODo1MVoiLCJjcmVhdGVkX2J5IjoiRU5WIE1ZU1FMX1ZFUlNJT049OC4xLjAtMS5lbDgiLCJjb21tZW50IjoiYnVpbGRraXQuZG9ja2VyZmlsZS52MCIsImVtcHR5X2xheWVyIjp0cnVlfSx7ImNyZWF0ZWQiOiIyMDIzLTA3LTI3VDIyOjE4OjUxWiIsImNyZWF0ZWRfYnkiOiJSVU4gL2Jpbi9zaCAtYyBzZXQgLWV1OyBcdC4gL2V0Yy9vcy1yZWxlYXNlOyBcdHsgXHRcdGVjaG8gJ1tteXNxbGlubm92YXRpb24tc2VydmVyLW1pbmltYWxdJzsgXHRcdGVjaG8gJ25hbWU9TXlTUUwgaW5ub3ZhdGlvbiBTZXJ2ZXIgTWluaW1hbCc7IFx0XHRlY2hvICdlbmFibGVkPTEnOyBcdFx0ZWNobyBcImJhc2V1cmw9aHR0cHM6Ly9yZXBvLm15c3FsLmNvbS95dW0vbXlzcWwtaW5ub3ZhdGlvbi1jb21tdW5pdHkvZG9ja2VyL2VsLyR7VkVSU0lPTl9JRCUlWy4tXSp9L1xcJGJhc2VhcmNoL1wiOyBcdFx0ZWNobyAnZ3BnY2hlY2s9MSc7IFx0XHRlY2hvICdncGdrZXk9ZmlsZTovLy9ldGMvcGtpL3JwbS1ncGcvUlBNLUdQRy1LRVktbXlzcWwnOyBcdFx0ZWNobyAnbW9kdWxlX2hvdGZpeGVzPXRydWUnOyBcdH0gfCB0ZWUgL2V0Yy95dW0ucmVwb3MuZC9teXNxbC1jb21tdW5pdHktbWluaW1hbC5yZXBvICMgYnVpbGRraXQiLCJjb21tZW50IjoiYnVpbGRraXQuZG9ja2VyZmlsZS52MCJ9LHsiY3JlYXRlZCI6IjIwMjMtMDctMjdUMjI6MTg6NTFaIiwiY3JlYXRlZF9ieSI6IlJVTiAvYmluL3NoIC1jIHNldCAtZXV4OyBcdG1pY3JvZG5mIGluc3RhbGwgLXkgXCJteXNxbC1jb21tdW5pdHktc2VydmVyLW1pbmltYWwtJE1ZU1FMX1ZFUlNJT05cIjsgXHRtaWNyb2RuZiBjbGVhbiBhbGw7IFx0Z3JlcCAtRiAnc29ja2V0PS92YXIvbGliL215c3FsL215c3FsLnNvY2snIC9ldGMvbXkuY25mOyBcdHNlZCAtaSAncyFec29ja2V0PS4qIXNvY2tldD0vdmFyL3J1bi9teXNxbGQvbXlzcWxkLnNvY2shJyAvZXRjL215LmNuZjsgXHRncmVwIC1GICdzb2NrZXQ9L3Zhci9ydW4vbXlzcWxkL215c3FsZC5zb2NrJyAvZXRjL215LmNuZjsgXHR7IGVjaG8gJ1tjbGllbnRdJzsgZWNobyAnc29ja2V0PS92YXIvcnVuL215c3FsZC9teXNxbGQuc29jayc7IH0gXHUwMDNlXHUwMDNlIC9ldGMvbXkuY25mOyBcdFx0ISBncmVwIC1GICchaW5jbHVkZWRpcicgL2V0Yy9teS5jbmY7IFx0eyBlY2hvOyBlY2hvICchaW5jbHVkZWRpciAvZXRjL215c3FsL2NvbmYuZC8nOyB9IFx1MDAzZVx1MDAzZSAvZXRjL215LmNuZjsgXHRta2RpciAtcCAvZXRjL215c3FsL2NvbmYuZDsgXHRta2RpciAtcCAvdmFyL2xpYi9teXNxbCAvdmFyL3J1bi9teXNxbGQ7IFx0Y2hvd24gbXlzcWw6bXlzcWwgL3Zhci9saWIvbXlzcWwgL3Zhci9ydW4vbXlzcWxkOyBcdGNobW9kIDE3NzcgL3Zhci9saWIvbXlzcWwgL3Zhci9ydW4vbXlzcWxkOyBcdFx0bWtkaXIgL2RvY2tlci1lbnRyeXBvaW50LWluaXRkYi5kOyBcdFx0bXlzcWxkIC0tdmVyc2lvbjsgXHRteXNxbCAtLXZlcnNpb24gIyBidWlsZGtpdCIsImNvbW1lbnQiOiJidWlsZGtpdC5kb2NrZXJmaWxlLnYwIn0seyJjcmVhdGVkIjoiMjAyMy0wNy0yN1QyMjoxODo1MVoiLCJjcmVhdGVkX2J5IjoiUlVOIC9iaW4vc2ggLWMgc2V0IC1ldTsgXHQuIC9ldGMvb3MtcmVsZWFzZTsgXHR7IFx0XHRlY2hvICdbbXlzcWwtdG9vbHMtY29tbXVuaXR5XSc7IFx0XHRlY2hvICduYW1lPU15U1FMIFRvb2xzIENvbW11bml0eSc7IFx0XHRlY2hvIFwiYmFzZXVybD1odHRwczovL3JlcG8ubXlzcWwuY29tL3l1bS9teXNxbC10b29scy1jb21tdW5pdHkvZWwvJHtWRVJTSU9OX0lEJSVbLi1dKn0vXFwkYmFzZWFyY2gvXCI7IFx0XHRlY2hvICdlbmFibGVkPTEnOyBcdFx0ZWNobyAnZ3BnY2hlY2s9MSc7IFx0XHRlY2hvICdncGdrZXk9ZmlsZTovLy9ldGMvcGtpL3JwbS1ncGcvUlBNLUdQRy1LRVktbXlzcWwnOyBcdFx0ZWNobyAnbW9kdWxlX2hvdGZpeGVzPXRydWUnOyBcdH0gfCB0ZWUgL2V0Yy95dW0ucmVwb3MuZC9teXNxbC1jb21tdW5pdHktdG9vbHMucmVwbyAjIGJ1aWxka2l0IiwiY29tbWVudCI6ImJ1aWxka2l0LmRvY2tlcmZpbGUudjAifSx7ImNyZWF0ZWQiOiIyMDIzLTA3LTI3VDIyOjE4OjUxWiIsImNyZWF0ZWRfYnkiOiJFTlYgTVlTUUxfU0hFTExfVkVSU0lPTj04LjAuMzQtMS5lbDgiLCJjb21tZW50IjoiYnVpbGRraXQuZG9ja2VyZmlsZS52MCIsImVtcHR5X2xheWVyIjp0cnVlfSx7ImNyZWF0ZWQiOiIyMDIzLTA3LTI3VDIyOjE4OjUxWiIsImNyZWF0ZWRfYnkiOiJSVU4gL2Jpbi9zaCAtYyBzZXQgLWV1eDsgXHRtaWNyb2RuZiBpbnN0YWxsIC15IFwibXlzcWwtc2hlbGwtJE1ZU1FMX1NIRUxMX1ZFUlNJT05cIjsgXHRtaWNyb2RuZiBjbGVhbiBhbGw7IFx0XHRteXNxbHNoIC0tdmVyc2lvbiAjIGJ1aWxka2l0IiwiY29tbWVudCI6ImJ1aWxka2l0LmRvY2tlcmZpbGUudjAifSx7ImNyZWF0ZWQiOiIyMDIzLTA3LTI3VDIyOjE4OjUxWiIsImNyZWF0ZWRfYnkiOiJWT0xVTUUgWy92YXIvbGliL215c3FsXSIsImNvbW1lbnQiOiJidWlsZGtpdC5kb2NrZXJmaWxlLnYwIiwiZW1wdHlfbGF5ZXIiOnRydWV9LHsiY3JlYXRlZCI6IjIwMjMtMDctMjdUMjI6MTg6NTFaIiwiY3JlYXRlZF9ieSI6IkNPUFkgZG9ja2VyLWVudHJ5cG9pbnQuc2ggL3Vzci9sb2NhbC9iaW4vICMgYnVpbGRraXQiLCJjb21tZW50IjoiYnVpbGRraXQuZG9ja2VyZmlsZS52MCJ9LHsiY3JlYXRlZCI6IjIwMjMtMDctMjdUMjI6MTg6NTFaIiwiY3JlYXRlZF9ieSI6IkVOVFJZUE9JTlQgW1wiZG9ja2VyLWVudHJ5cG9pbnQuc2hcIl0iLCJjb21tZW50IjoiYnVpbGRraXQuZG9ja2VyZmlsZS52MCIsImVtcHR5X2xheWVyIjp0cnVlfSx7ImNyZWF0ZWQiOiIyMDIzLTA3LTI3VDIyOjE4OjUxWiIsImNyZWF0ZWRfYnkiOiJFWFBPU0UgbWFwWzMzMDYvdGNwOnt9IDMzMDYwL3RjcDp7fV0iLCJjb21tZW50IjoiYnVpbGRraXQuZG9ja2VyZmlsZS52MCIsImVtcHR5X2xheWVyIjp0cnVlfSx7ImNyZWF0ZWQiOiIyMDIzLTA3LTI3VDIyOjE4OjUxWiIsImNyZWF0ZWRfYnkiOiJDTUQgW1wibXlzcWxkXCJdIiwiY29tbWVudCI6ImJ1aWxka2l0LmRvY2tlcmZpbGUudjAiLCJlbXB0eV9sYXllciI6dHJ1ZX1dLCJvcyI6ImxpbnV4Iiwicm9vdGZzIjp7InR5cGUiOiJsYXllcnMiLCJkaWZmX2lkcyI6WyJzaGEyNTY6ZDZmZTYzZThiZTYzZDA3OGFlZWY5NzM5ZjJjN2VhMTAxZTZjYzFhM2Y5OThkMTc5YWY2M2ExMGU3ZjBmOTU5ZCIsInNoYTI1NjpjNzJmM2Y4MWI1NjdmZGQ3Yjk1Y2ZkMzFiZjMwN2M5ODc0NTY3OTQwNzhlZjcxZDQwZTYxMTg2NTFhZWY1ZDE0Iiwic2hhMjU2OjY1ZmJiMjZiMmFkZGQyZGU5ODM4YjRjOGQ1OTFmM2ZkZDU3YmM3MTY0YzQ4MWVjZDk0NTZkYTljMDc2M2I0ZjIiLCJzaGEyNTY6NzVmNGI5MDM4YmQ2ZTg4YTMyN2MxZDA5NmIxYmNhOTVhZmMwMTNiOTViMDI1ZmQzOWRiYzhmMjRkYzk0Zjk0OSIsInNoYTI1NjpiZmFmMGI2N2Q2Y2UyZjk2ZmVmNmY3YTY4OGU0NTMyYTMzMTVjNTQxYjg0ZjNjNTkxOTIzZDNjZGVjNDA4ODdlIiwic2hhMjU2OjJlMDY0MzYwNzNlODU5NGI0MDIzYzIxZTViMGYwYjc2ZmJiYzkyYjdlOWJiNGU5OGM1ZWY0NDFlOWU2NjYyOWIiLCJzaGEyNTY6MmViMzg0NjlkNjYzMjM5YzRiMTRkZThiZDgzNTkwNTA3NmJjYzQ0MDIxNTYzMDc0NmVkNGY2NDQzZjkwZGU1MCIsInNoYTI1NjphNGM2YmQyMzZlMTAxNzU4ZWI0MzY3OTJkNjdlOGIxMzJhOWJlMjBhYzEwZjJhZmVkZTIyNmE1OTVjYWRhYTIzIiwic2hhMjU2OjMxMDU4YTNlZDkwODhiNTM3ZmVjNTEyMjNmNDNlNWNlOTBlOGY1NDk3NzM3OTE5MjM5MDJiYmVhYjQ3MmQ4NjAiLCJzaGEyNTY6ZTBiYjhkNzBhYjczYzA0NTM0M2Y4NWUwYzA3NjUzMjdlYTBmYjZjNmUwMzI5Y2VhYjMwOWRiMDhlM2ZkZDUxZCJdfX0=",
+      "distro": {
+        "os_name": "oraclelinux",
+        "os_version": "8"
+      },
+      "platform": {
+        "os": "linux",
+        "architecture": "amd64"
+      },
+      "size": 589241856
+    }
+  },
+  "artifacts": [
+    {
+      "type": "golang",
+      "namespace": "github.com/opencontainers",
+      "name": "runc",
+      "version": "1.1.0",
+      "purl": "pkg:golang/github.com/opencontainers/runc@1.1.0",
+      "locations": [
+        {
+          "path": "/usr/local/bin/gosu",
+          "ordinal": 4,
+          "digest": "sha256:65fbb26b2addd2de9838b4c8d591f3fdd57bc7164c481ecd9456da9c0763b4f2",
+          "diff_id": "sha256:65fbb26b2addd2de9838b4c8d591f3fdd57bc7164c481ecd9456da9c0763b4f2"
+        }
+      ]
+    },
+    {
+      "type": "golang",
+      "namespace": "github.com/tianon",
+      "name": "gosu",
+      "version": "(devel)",
+      "purl": "pkg:golang/github.com/tianon/gosu@(devel)",
+      "locations": [
+        {
+          "path": "/usr/local/bin/gosu",
+          "ordinal": 4,
+          "digest": "sha256:65fbb26b2addd2de9838b4c8d591f3fdd57bc7164c481ecd9456da9c0763b4f2",
+          "diff_id": "sha256:65fbb26b2addd2de9838b4c8d591f3fdd57bc7164c481ecd9456da9c0763b4f2"
+        }
+      ]
+    },
+    {
+      "type": "golang",
+      "namespace": "golang.org/x",
+      "name": "sys",
+      "version": "0.0.0-20220907062415-87db552b00fd",
+      "purl": "pkg:golang/golang.org/x/sys@0.0.0-20220907062415-87db552b00fd",
+      "locations": [
+        {
+          "path": "/usr/local/bin/gosu",
+          "ordinal": 4,
+          "digest": "sha256:65fbb26b2addd2de9838b4c8d591f3fdd57bc7164c481ecd9456da9c0763b4f2",
+          "diff_id": "sha256:65fbb26b2addd2de9838b4c8d591f3fdd57bc7164c481ecd9456da9c0763b4f2"
+        }
+      ]
+    },
+    {
+      "type": "golang",
+      "name": "stdlib",
+      "version": "1.18.2",
+      "purl": "pkg:golang/stdlib@1.18.2",
+      "locations": [
+        {
+          "path": "/usr/local/bin/gosu",
+          "ordinal": 4,
+          "digest": "sha256:65fbb26b2addd2de9838b4c8d591f3fdd57bc7164c481ecd9456da9c0763b4f2",
+          "diff_id": "sha256:65fbb26b2addd2de9838b4c8d591f3fdd57bc7164c481ecd9456da9c0763b4f2"
+        }
+      ]
+    },
+    {
+      "type": "pypi",
+      "name": "bcrypt",
+      "version": "3.2.2",
+      "purl": "pkg:pypi/bcrypt@3.2.2",
+      "author": "The Python Cryptographic Authority developers",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "locations": [
+        {
+          "path": "/usr/lib/mysqlsh/lib/python3.9/site-packages/bcrypt-3.2.2.dist-info/METADATA",
+          "ordinal": 13,
+          "digest": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860",
+          "diff_id": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860"
+        }
+      ]
+    },
+    {
+      "type": "pypi",
+      "name": "certifi",
+      "version": "2022.12.7",
+      "purl": "pkg:pypi/certifi@2022.12.7",
+      "author": "Kenneth Reitz",
+      "licenses": [
+        "MPL-2.0"
+      ],
+      "locations": [
+        {
+          "path": "/usr/lib/mysqlsh/lib/python3.9/site-packages/certifi-2022.12.7.dist-info/METADATA",
+          "ordinal": 13,
+          "digest": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860",
+          "diff_id": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860"
+        }
+      ]
+    },
+    {
+      "type": "pypi",
+      "name": "cffi",
+      "version": "1.15.1",
+      "purl": "pkg:pypi/cffi@1.15.1",
+      "author": "Armin Rigo, Maciej Fijalkowski",
+      "licenses": [
+        "MIT"
+      ],
+      "locations": [
+        {
+          "path": "/usr/lib/mysqlsh/lib/python3.9/site-packages/cffi-1.15.1.dist-info/METADATA",
+          "ordinal": 13,
+          "digest": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860",
+          "diff_id": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860"
+        }
+      ]
+    },
+    {
+      "type": "pypi",
+      "name": "circuitbreaker",
+      "version": "1.4.0",
+      "purl": "pkg:pypi/circuitbreaker@1.4.0",
+      "author": "Fabian Fuelling",
+      "licenses": [
+        "BSD-3-Clause"
+      ],
+      "locations": [
+        {
+          "path": "/usr/lib/mysqlsh/lib/python3.9/site-packages/circuitbreaker-1.4.0.dist-info/METADATA",
+          "ordinal": 13,
+          "digest": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860",
+          "diff_id": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860"
+        }
+      ]
+    },
+    {
+      "type": "pypi",
+      "name": "cryptography",
+      "version": "39.0.2",
+      "purl": "pkg:pypi/cryptography@39.0.2",
+      "author": "The Python Cryptographic Authority and individual contributors",
+      "licenses": [
+        "(Apache-2.0",
+        "BSD-3-Clause)",
+        "PSF-2.0"
+      ],
+      "locations": [
+        {
+          "path": "/usr/lib/mysqlsh/lib/python3.9/site-packages/cryptography-39.0.2.dist-info/METADATA",
+          "ordinal": 13,
+          "digest": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860",
+          "diff_id": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860"
+        }
+      ]
+    },
+    {
+      "type": "pypi",
+      "name": "oci",
+      "version": "2.99.1",
+      "purl": "pkg:pypi/oci@2.99.1",
+      "author": "Oracle",
+      "licenses": [
+        "Universal Permissive License 1.0",
+        "Apache License 2.0"
+      ],
+      "locations": [
+        {
+          "path": "/usr/lib/mysqlsh/lib/python3.9/site-packages/oci-2.99.1.dist-info/METADATA",
+          "ordinal": 13,
+          "digest": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860",
+          "diff_id": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860"
+        }
+      ]
+    },
+    {
+      "type": "pypi",
+      "name": "paramiko",
+      "version": "2.11.0",
+      "purl": "pkg:pypi/paramiko@2.11.0",
+      "author": "Jeff Forcier",
+      "licenses": [
+        "LGPL"
+      ],
+      "locations": [
+        {
+          "path": "/usr/lib/mysqlsh/lib/python3.9/site-packages/paramiko-2.11.0.dist-info/METADATA",
+          "ordinal": 13,
+          "digest": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860",
+          "diff_id": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860"
+        }
+      ]
+    },
+    {
+      "type": "pypi",
+      "name": "pip",
+      "version": "20.2.4",
+      "purl": "pkg:pypi/pip@20.2.4",
+      "author": "The pip developers",
+      "licenses": [
+        "MIT"
+      ],
+      "locations": [
+        {
+          "path": "/usr/lib/python3.9/site-packages/pip-20.2.4.dist-info/METADATA",
+          "ordinal": 13,
+          "digest": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860",
+          "diff_id": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860"
+        }
+      ]
+    },
+    {
+      "type": "pypi",
+      "name": "pycparser",
+      "version": "2.21",
+      "purl": "pkg:pypi/pycparser@2.21",
+      "author": "Eli Bendersky",
+      "licenses": [
+        "BSD"
+      ],
+      "locations": [
+        {
+          "path": "/usr/lib/mysqlsh/lib/python3.9/site-packages/pycparser-2.21.dist-info/METADATA",
+          "ordinal": 13,
+          "digest": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860",
+          "diff_id": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860"
+        }
+      ]
+    },
+    {
+      "type": "pypi",
+      "name": "pynacl",
+      "version": "1.4.0",
+      "purl": "pkg:pypi/pynacl@1.4.0",
+      "author": "The PyNaCl developers",
+      "licenses": [
+        "Apache License 2.0"
+      ],
+      "locations": [
+        {
+          "path": "/usr/lib/mysqlsh/lib/python3.9/site-packages/PyNaCl-1.4.0.dist-info/METADATA",
+          "ordinal": 13,
+          "digest": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860",
+          "diff_id": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860"
+        }
+      ]
+    },
+    {
+      "type": "pypi",
+      "name": "pyopenssl",
+      "version": "23.1.1",
+      "purl": "pkg:pypi/pyopenssl@23.1.1",
+      "author": "The pyOpenSSL developers",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "locations": [
+        {
+          "path": "/usr/lib/mysqlsh/lib/python3.9/site-packages/pyOpenSSL-23.1.1.dist-info/METADATA",
+          "ordinal": 13,
+          "digest": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860",
+          "diff_id": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860"
+        }
+      ]
+    },
+    {
+      "type": "pypi",
+      "name": "python-dateutil",
+      "version": "2.8.2",
+      "purl": "pkg:pypi/python-dateutil@2.8.2",
+      "author": "Gustavo Niemeyer",
+      "licenses": [
+        "Dual License"
+      ],
+      "locations": [
+        {
+          "path": "/usr/lib/mysqlsh/lib/python3.9/site-packages/python_dateutil-2.8.2.dist-info/METADATA",
+          "ordinal": 13,
+          "digest": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860",
+          "diff_id": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860"
+        }
+      ]
+    },
+    {
+      "type": "pypi",
+      "name": "pytz",
+      "version": "2023.3",
+      "purl": "pkg:pypi/pytz@2023.3",
+      "author": "Stuart Bishop",
+      "licenses": [
+        "MIT"
+      ],
+      "locations": [
+        {
+          "path": "/usr/lib/mysqlsh/lib/python3.9/site-packages/pytz-2023.3.dist-info/METADATA",
+          "ordinal": 13,
+          "digest": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860",
+          "diff_id": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860"
+        }
+      ]
+    },
+    {
+      "type": "pypi",
+      "name": "pyyaml",
+      "version": "6.0",
+      "purl": "pkg:pypi/pyyaml@6.0",
+      "author": "Kirill Simonov",
+      "licenses": [
+        "MIT"
+      ],
+      "locations": [
+        {
+          "path": "/usr/lib/mysqlsh/lib/python3.9/site-packages/PyYAML-6.0.dist-info/METADATA",
+          "ordinal": 13,
+          "digest": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860",
+          "diff_id": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860"
+        }
+      ]
+    },
+    {
+      "type": "pypi",
+      "name": "setuptools",
+      "version": "50.3.2",
+      "purl": "pkg:pypi/setuptools@50.3.2",
+      "author": "Python Packaging Authority",
+      "licenses": [
+        "UNKNOWN"
+      ],
+      "locations": [
+        {
+          "path": "/usr/lib/python3.9/site-packages/setuptools-50.3.2.dist-info/METADATA",
+          "ordinal": 13,
+          "digest": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860",
+          "diff_id": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860"
+        }
+      ]
+    },
+    {
+      "type": "pypi",
+      "name": "six",
+      "version": "1.16.0",
+      "purl": "pkg:pypi/six@1.16.0",
+      "author": "Benjamin Peterson",
+      "licenses": [
+        "MIT"
+      ],
+      "locations": [
+        {
+          "path": "/usr/lib/mysqlsh/lib/python3.9/site-packages/six-1.16.0.dist-info/METADATA",
+          "ordinal": 13,
+          "digest": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860",
+          "diff_id": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860"
+        }
+      ]
+    },
+    {
+      "type": "pypi",
+      "name": "typing-extensions",
+      "version": "4.5.0",
+      "purl": "pkg:pypi/typing-extensions@4.5.0",
+      "locations": [
+        {
+          "path": "/usr/lib/mysqlsh/lib/python3.9/site-packages/typing_extensions-4.5.0.dist-info/METADATA",
+          "ordinal": 13,
+          "digest": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860",
+          "diff_id": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "acl",
+      "version": "2.2.53-1.el8",
+      "purl": "pkg:rpm/oraclelinux/acl@2.2.53-1.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "LGPLv2+"
+      ],
+      "size": 59272,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "attr",
+      "version": "2.4.48-3.el8",
+      "purl": "pkg:rpm/oraclelinux/attr@2.4.48-3.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "LGPLv2+"
+      ],
+      "size": 27346,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "audit-libs",
+      "version": "3.0.7-4.el8",
+      "purl": "pkg:rpm/oraclelinux/audit-libs@3.0.7-4.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "LGPLv2+"
+      ],
+      "size": 308466,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ],
+      "parent": "pkg:rpm/ol/audit@3.0.7-4.el8?os_name=oraclelinux\u0026os_version=8"
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "audit",
+      "version": "3.0.7-4.el8",
+      "purl": "pkg:rpm/oraclelinux/audit@3.0.7-4.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "LGPLv2+"
+      ],
+      "size": 308466,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "basesystem",
+      "version": "11-5.el8",
+      "purl": "pkg:rpm/oraclelinux/basesystem@11-5.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "Public Domain"
+      ],
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "bash",
+      "version": "4.4.20-4.el8_6",
+      "purl": "pkg:rpm/oraclelinux/bash@4.4.20-4.el8_6?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "GPLv3+"
+      ],
+      "size": 6861444,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "brotli",
+      "version": "1.0.6-3.el8",
+      "purl": "pkg:rpm/oraclelinux/brotli@1.0.6-3.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "MIT"
+      ],
+      "size": 1521964,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "bzip2-libs",
+      "version": "1.0.6-26.el8",
+      "purl": "pkg:rpm/oraclelinux/bzip2-libs@1.0.6-26.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "BSD"
+      ],
+      "size": 77229,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ],
+      "parent": "pkg:rpm/ol/bzip2@1.0.6-26.el8?os_name=oraclelinux\u0026os_version=8"
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "bzip2",
+      "version": "1.0.6-26.el8",
+      "purl": "pkg:rpm/oraclelinux/bzip2@1.0.6-26.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "BSD"
+      ],
+      "size": 93452,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "ordinal": 5,
+          "digest": "sha256:75f4b9038bd6e88a327c1d096b1bca95afc013b95b025fd39dbc8f24dc94f949",
+          "diff_id": "sha256:75f4b9038bd6e88a327c1d096b1bca95afc013b95b025fd39dbc8f24dc94f949"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "ca-certificates",
+      "version": "2023.2.60_v7.0.306-80.0.el8_8",
+      "purl": "pkg:rpm/oraclelinux/ca-certificates@2023.2.60_v7.0.306-80.0.el8_8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "Public Domain"
+      ],
+      "size": 2332582,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "chkconfig",
+      "version": "1.19.1-1.0.2.el8",
+      "purl": "pkg:rpm/oraclelinux/chkconfig@1.19.1-1.0.2.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "GPLv2"
+      ],
+      "size": 827829,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "coreutils-single",
+      "version": "8.30-15.0.1.el8",
+      "purl": "pkg:rpm/oraclelinux/coreutils-single@8.30-15.0.1.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "GPLv3+"
+      ],
+      "size": 1360785,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ],
+      "parent": "pkg:rpm/ol/coreutils@8.30-15.0.1.el8?os_name=oraclelinux\u0026os_version=8"
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "coreutils",
+      "version": "8.30-15.0.1.el8",
+      "purl": "pkg:rpm/oraclelinux/coreutils@8.30-15.0.1.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "GPLv3+"
+      ],
+      "size": 1360785,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "crypto-policies",
+      "version": "20221215-1.gitece0092.el8",
+      "purl": "pkg:rpm/oraclelinux/crypto-policies@20221215-1.gitece0092.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "LGPLv2+"
+      ],
+      "size": 73467,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "curl",
+      "version": "7.61.1-30.el8_8.3",
+      "purl": "pkg:rpm/oraclelinux/curl@7.61.1-30.el8_8.3?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "MIT"
+      ],
+      "size": 700909,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "cyrus-sasl-lib",
+      "version": "2.1.27-6.el8_5",
+      "purl": "pkg:rpm/oraclelinux/cyrus-sasl-lib@2.1.27-6.el8_5?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "BSD with advertising"
+      ],
+      "size": 726066,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ],
+      "parent": "pkg:rpm/ol/cyrus-sasl@2.1.27-6.el8_5?os_name=oraclelinux\u0026os_version=8"
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "cyrus-sasl",
+      "version": "2.1.27-6.el8_5",
+      "purl": "pkg:rpm/oraclelinux/cyrus-sasl@2.1.27-6.el8_5?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "BSD with advertising"
+      ],
+      "size": 726066,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "e2fsprogs",
+      "version": "1.45.6-5.el8",
+      "purl": "pkg:rpm/oraclelinux/e2fsprogs@1.45.6-5.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "MIT"
+      ],
+      "size": 61377,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "elfutils-libelf",
+      "version": "0.188-3.el8",
+      "purl": "pkg:rpm/oraclelinux/elfutils-libelf@0.188-3.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "GPLv2+",
+        "LGPLv3+"
+      ],
+      "size": 1024884,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ],
+      "parent": "pkg:rpm/ol/elfutils@0.188-3.el8?os_name=oraclelinux\u0026os_version=8"
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "elfutils",
+      "version": "0.188-3.el8",
+      "purl": "pkg:rpm/oraclelinux/elfutils@0.188-3.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "GPLv2+",
+        "LGPLv3+"
+      ],
+      "size": 1024884,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "expat",
+      "version": "2.2.5-11.0.1.el8",
+      "purl": "pkg:rpm/oraclelinux/expat@2.2.5-11.0.1.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "MIT"
+      ],
+      "size": 315308,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "ordinal": 13,
+          "digest": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860",
+          "diff_id": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "file-libs",
+      "version": "5.33-24.el8",
+      "purl": "pkg:rpm/oraclelinux/file-libs@5.33-24.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "BSD"
+      ],
+      "size": 6386549,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ],
+      "parent": "pkg:rpm/ol/file@5.33-24.el8?os_name=oraclelinux\u0026os_version=8"
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "file",
+      "version": "5.33-24.el8",
+      "purl": "pkg:rpm/oraclelinux/file@5.33-24.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "BSD"
+      ],
+      "size": 6386549,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "filesystem",
+      "version": "3.8-6.el8",
+      "purl": "pkg:rpm/oraclelinux/filesystem@3.8-6.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "Public Domain"
+      ],
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "findutils",
+      "version": "1:4.6.0-20.el8_8.1",
+      "purl": "pkg:rpm/oraclelinux/findutils@1:4.6.0-20.el8_8.1?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "GPLv3+"
+      ],
+      "size": 1769057,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "ordinal": 5,
+          "digest": "sha256:75f4b9038bd6e88a327c1d096b1bca95afc013b95b025fd39dbc8f24dc94f949",
+          "diff_id": "sha256:75f4b9038bd6e88a327c1d096b1bca95afc013b95b025fd39dbc8f24dc94f949"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "gawk",
+      "version": "4.2.1-4.el8",
+      "purl": "pkg:rpm/oraclelinux/gawk@4.2.1-4.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "GPLv3+",
+        "GPLv2+",
+        "LGPLv2+",
+        "BSD"
+      ],
+      "size": 2699758,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "gcc",
+      "version": "8.5.0-18.0.6.el8",
+      "purl": "pkg:rpm/oraclelinux/gcc@8.5.0-18.0.6.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "GPLv3+",
+        "GPLv3+ with exceptions",
+        "GPLv2+ with exceptions",
+        "LGPLv2+",
+        "BSD"
+      ],
+      "size": 194336,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "gdbm-libs",
+      "version": "1:1.18-2.el8",
+      "purl": "pkg:rpm/oraclelinux/gdbm-libs@1:1.18-2.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "GPLv3+"
+      ],
+      "size": 118448,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "ordinal": 13,
+          "digest": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860",
+          "diff_id": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860"
+        }
+      ],
+      "parent": "pkg:rpm/ol/gdbm@1:1.18-2.el8?os_name=oraclelinux\u0026os_version=8"
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "gdbm",
+      "version": "1:1.18-2.el8",
+      "purl": "pkg:rpm/oraclelinux/gdbm@1:1.18-2.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "GPLv3+"
+      ],
+      "size": 118448,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "ordinal": 13,
+          "digest": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860",
+          "diff_id": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "glib2",
+      "version": "2.56.4-161.el8",
+      "purl": "pkg:rpm/oraclelinux/glib2@2.56.4-161.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "LGPLv2+"
+      ],
+      "size": 12279848,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "glibc-common",
+      "version": "2.28-225.0.4.el8_8.6",
+      "purl": "pkg:rpm/oraclelinux/glibc-common@2.28-225.0.4.el8_8.6?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "LGPLv2+",
+        "LGPLv2+ with exceptions",
+        "GPLv2+",
+        "GPLv2+ with exceptions",
+        "BSD",
+        "Inner-Net",
+        "ISC",
+        "Public Domain",
+        "GFDL"
+      ],
+      "size": 7997196,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ],
+      "parent": "pkg:rpm/ol/glibc@2.28-225.0.4.el8_8.6?os_name=oraclelinux\u0026os_version=8"
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "glibc-minimal-langpack",
+      "version": "2.28-225.0.4.el8_8.6",
+      "purl": "pkg:rpm/oraclelinux/glibc-minimal-langpack@2.28-225.0.4.el8_8.6?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "LGPLv2+",
+        "LGPLv2+ with exceptions",
+        "GPLv2+",
+        "GPLv2+ with exceptions",
+        "BSD",
+        "Inner-Net",
+        "ISC",
+        "Public Domain",
+        "GFDL"
+      ],
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ],
+      "parent": "pkg:rpm/ol/glibc@2.28-225.0.4.el8_8.6?os_name=oraclelinux\u0026os_version=8"
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "glibc",
+      "version": "2.28-225.0.4.el8_8.6",
+      "purl": "pkg:rpm/oraclelinux/glibc@2.28-225.0.4.el8_8.6?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "LGPLv2+",
+        "LGPLv2+ with exceptions",
+        "GPLv2+",
+        "GPLv2+ with exceptions",
+        "BSD",
+        "Inner-Net",
+        "ISC",
+        "Public Domain",
+        "GFDL"
+      ],
+      "size": 6722640,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "gmp",
+      "version": "1:6.1.2-10.el8",
+      "purl": "pkg:rpm/oraclelinux/gmp@1:6.1.2-10.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "LGPLv3+",
+        "GPLv2+"
+      ],
+      "size": 1640340,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "gnupg2",
+      "version": "2.2.20-3.el8_6",
+      "purl": "pkg:rpm/oraclelinux/gnupg2@2.2.20-3.el8_6?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "GPLv3+"
+      ],
+      "size": 9919363,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "gnutls",
+      "version": "3.6.16-6.el8_7",
+      "purl": "pkg:rpm/oraclelinux/gnutls@3.6.16-6.el8_7?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "GPLv3+",
+        "LGPLv2+"
+      ],
+      "size": 3007975,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "gobject-introspection",
+      "version": "1.56.1-1.el8",
+      "purl": "pkg:rpm/oraclelinux/gobject-introspection@1.56.1-1.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "GPLv2+, LGPLv2+, MIT"
+      ],
+      "size": 880467,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "gpg-pubkey",
+      "version": "ad986da3-5cabf60d",
+      "purl": "pkg:rpm/oraclelinux/gpg-pubkey@ad986da3-5cabf60d?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "pubkey"
+      ],
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "gpgme",
+      "version": "1.13.1-11.el8",
+      "purl": "pkg:rpm/oraclelinux/gpgme@1.13.1-11.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "LGPLv2+",
+        "GPLv3+"
+      ],
+      "size": 1005040,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "grep",
+      "version": "3.1-6.el8",
+      "purl": "pkg:rpm/oraclelinux/grep@3.1-6.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "GPLv3+"
+      ],
+      "size": 835213,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "gzip",
+      "version": "1.9-13.el8_5",
+      "purl": "pkg:rpm/oraclelinux/gzip@1.9-13.el8_5?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "GPLv3+",
+        "GFDL"
+      ],
+      "size": 352906,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "ordinal": 5,
+          "digest": "sha256:75f4b9038bd6e88a327c1d096b1bca95afc013b95b025fd39dbc8f24dc94f949",
+          "diff_id": "sha256:75f4b9038bd6e88a327c1d096b1bca95afc013b95b025fd39dbc8f24dc94f949"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "info",
+      "version": "6.5-7.el8",
+      "purl": "pkg:rpm/oraclelinux/info@6.5-7.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "GPLv3+"
+      ],
+      "size": 386098,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ],
+      "parent": "pkg:rpm/ol/texinfo@6.5-7.el8?os_name=oraclelinux\u0026os_version=8"
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "json-c",
+      "version": "0.13.1-3.el8",
+      "purl": "pkg:rpm/oraclelinux/json-c@0.13.1-3.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "MIT"
+      ],
+      "size": 69282,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "keyutils-libs",
+      "version": "1.5.10-9.el8",
+      "purl": "pkg:rpm/oraclelinux/keyutils-libs@1.5.10-9.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "GPLv2+",
+        "LGPLv2+"
+      ],
+      "size": 43798,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ],
+      "parent": "pkg:rpm/ol/keyutils@1.5.10-9.el8?os_name=oraclelinux\u0026os_version=8"
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "keyutils",
+      "version": "1.5.10-9.el8",
+      "purl": "pkg:rpm/oraclelinux/keyutils@1.5.10-9.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "GPLv2+",
+        "LGPLv2+"
+      ],
+      "size": 43798,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "krb5-libs",
+      "version": "1.18.2-25.0.1.el8_8",
+      "purl": "pkg:rpm/oraclelinux/krb5-libs@1.18.2-25.0.1.el8_8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "MIT"
+      ],
+      "size": 2242259,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ],
+      "parent": "pkg:rpm/ol/krb5@1.18.2-25.0.1.el8_8?os_name=oraclelinux\u0026os_version=8"
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "krb5",
+      "version": "1.18.2-25.0.1.el8_8",
+      "purl": "pkg:rpm/oraclelinux/krb5@1.18.2-25.0.1.el8_8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "MIT"
+      ],
+      "size": 2242259,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "libacl",
+      "version": "2.2.53-1.el8",
+      "purl": "pkg:rpm/oraclelinux/libacl@2.2.53-1.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "LGPLv2+"
+      ],
+      "size": 59272,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ],
+      "parent": "pkg:rpm/ol/acl@2.2.53-1.el8?os_name=oraclelinux\u0026os_version=8"
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "libaio",
+      "version": "0.3.112-1.el8",
+      "purl": "pkg:rpm/oraclelinux/libaio@0.3.112-1.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "LGPLv2+"
+      ],
+      "size": 95070,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "ordinal": 10,
+          "digest": "sha256:2eb38469d663239c4b14de8bd835905076bcc440215630746ed4f6443f90de50",
+          "diff_id": "sha256:2eb38469d663239c4b14de8bd835905076bcc440215630746ed4f6443f90de50"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "libarchive",
+      "version": "3.3.3-5.el8",
+      "purl": "pkg:rpm/oraclelinux/libarchive@3.3.3-5.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "BSD"
+      ],
+      "size": 838327,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "libassuan",
+      "version": "2.5.1-3.el8",
+      "purl": "pkg:rpm/oraclelinux/libassuan@2.5.1-3.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "LGPLv2+",
+        "GPLv3+"
+      ],
+      "size": 202763,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "libattr",
+      "version": "2.4.48-3.el8",
+      "purl": "pkg:rpm/oraclelinux/libattr@2.4.48-3.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "LGPLv2+"
+      ],
+      "size": 27346,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ],
+      "parent": "pkg:rpm/ol/attr@2.4.48-3.el8?os_name=oraclelinux\u0026os_version=8"
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "libblkid",
+      "version": "2.32.1-42.el8_8",
+      "purl": "pkg:rpm/oraclelinux/libblkid@2.32.1-42.el8_8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "LGPLv2+"
+      ],
+      "size": 344008,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ],
+      "parent": "pkg:rpm/ol/util-linux@2.32.1-42.el8_8?os_name=oraclelinux\u0026os_version=8"
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "libcap-ng",
+      "version": "0.7.11-1.el8",
+      "purl": "pkg:rpm/oraclelinux/libcap-ng@0.7.11-1.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "LGPLv2+"
+      ],
+      "size": 51422,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "libcap",
+      "version": "2.48-5.el8_8",
+      "purl": "pkg:rpm/oraclelinux/libcap@2.48-5.el8_8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "BSD",
+        "GPLv2"
+      ],
+      "size": 164901,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "libcom_err",
+      "version": "1.45.6-5.el8",
+      "purl": "pkg:rpm/oraclelinux/libcom_err@1.45.6-5.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "MIT"
+      ],
+      "size": 61377,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ],
+      "parent": "pkg:rpm/ol/e2fsprogs@1.45.6-5.el8?os_name=oraclelinux\u0026os_version=8"
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "libcurl",
+      "version": "7.61.1-30.el8_8.3",
+      "purl": "pkg:rpm/oraclelinux/libcurl@7.61.1-30.el8_8.3?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "MIT"
+      ],
+      "size": 597616,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ],
+      "parent": "pkg:rpm/ol/curl@7.61.1-30.el8_8.3?os_name=oraclelinux\u0026os_version=8"
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "libdb-utils",
+      "version": "5.3.28-42.el8_4",
+      "purl": "pkg:rpm/oraclelinux/libdb-utils@5.3.28-42.el8_4?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "BSD",
+        "LGPLv2",
+        "Sleepycat"
+      ],
+      "size": 369631,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ],
+      "parent": "pkg:rpm/ol/libdb@5.3.28-42.el8_4?os_name=oraclelinux\u0026os_version=8"
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "libdb",
+      "version": "5.3.28-42.el8_4",
+      "purl": "pkg:rpm/oraclelinux/libdb@5.3.28-42.el8_4?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "BSD",
+        "LGPLv2",
+        "Sleepycat"
+      ],
+      "size": 1903376,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "libdnf",
+      "version": "0.63.0-14.0.1.el8_8",
+      "purl": "pkg:rpm/oraclelinux/libdnf@0.63.0-14.0.1.el8_8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "LGPLv2+"
+      ],
+      "size": 2417728,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "libffi",
+      "version": "3.1-24.el8",
+      "purl": "pkg:rpm/oraclelinux/libffi@3.1-24.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "MIT"
+      ],
+      "size": 53836,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "libgcc",
+      "version": "8.5.0-18.0.6.el8",
+      "purl": "pkg:rpm/oraclelinux/libgcc@8.5.0-18.0.6.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "GPLv3+",
+        "GPLv3+ with exceptions",
+        "GPLv2+ with exceptions",
+        "LGPLv2+",
+        "BSD"
+      ],
+      "size": 194336,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ],
+      "parent": "pkg:rpm/ol/gcc@8.5.0-18.0.6.el8?os_name=oraclelinux\u0026os_version=8"
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "libgcrypt",
+      "version": "1.8.5-7.el8_6",
+      "purl": "pkg:rpm/oraclelinux/libgcrypt@1.8.5-7.el8_6?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "LGPLv2+"
+      ],
+      "size": 1269734,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "libgpg-error",
+      "version": "1.31-1.el8",
+      "purl": "pkg:rpm/oraclelinux/libgpg-error@1.31-1.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "LGPLv2+"
+      ],
+      "size": 902850,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "libidn2",
+      "version": "2.2.0-1.el8",
+      "purl": "pkg:rpm/oraclelinux/libidn2@2.2.0-1.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "(GPLv2+",
+        "LGPLv3+)",
+        "GPLv3+"
+      ],
+      "size": 284354,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "libksba",
+      "version": "1.3.5-9.el8_7",
+      "purl": "pkg:rpm/oraclelinux/libksba@1.3.5-9.el8_7?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "(LGPLv3+",
+        "GPLv2+)",
+        "GPLv3+"
+      ],
+      "size": 334047,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "libmodulemd",
+      "version": "2.13.0-1.el8",
+      "purl": "pkg:rpm/oraclelinux/libmodulemd@2.13.0-1.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "MIT"
+      ],
+      "size": 722353,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "libmount",
+      "version": "2.32.1-42.el8_8",
+      "purl": "pkg:rpm/oraclelinux/libmount@2.32.1-42.el8_8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "LGPLv2+"
+      ],
+      "size": 398274,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ],
+      "parent": "pkg:rpm/ol/util-linux@2.32.1-42.el8_8?os_name=oraclelinux\u0026os_version=8"
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "libnghttp2",
+      "version": "1.33.0-5.el8_8",
+      "purl": "pkg:rpm/oraclelinux/libnghttp2@1.33.0-5.el8_8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "MIT"
+      ],
+      "size": 168252,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ],
+      "parent": "pkg:rpm/ol/nghttp2@1.33.0-5.el8_8?os_name=oraclelinux\u0026os_version=8"
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "libnsl2",
+      "version": "1.2.0-2.20180605git4a062cf.el8",
+      "purl": "pkg:rpm/oraclelinux/libnsl2@1.2.0-2.20180605git4a062cf.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "BSD",
+        "LGPLv2+"
+      ],
+      "size": 147122,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "ordinal": 13,
+          "digest": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860",
+          "diff_id": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "libpeas",
+      "version": "1.22.0-6.el8",
+      "purl": "pkg:rpm/oraclelinux/libpeas@1.22.0-6.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "LGPLv2+"
+      ],
+      "size": 375528,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "libpsl",
+      "version": "0.20.2-6.el8",
+      "purl": "pkg:rpm/oraclelinux/libpsl@0.20.2-6.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "MIT"
+      ],
+      "size": 70732,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "librepo",
+      "version": "1.14.2-4.el8",
+      "purl": "pkg:rpm/oraclelinux/librepo@1.14.2-4.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "LGPLv2+"
+      ],
+      "size": 217548,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "libselinux",
+      "version": "2.9-8.el8",
+      "purl": "pkg:rpm/oraclelinux/libselinux@2.9-8.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "Public Domain"
+      ],
+      "size": 173152,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "libsemanage",
+      "version": "2.9-9.el8_6",
+      "purl": "pkg:rpm/oraclelinux/libsemanage@2.9-9.el8_6?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "LGPLv2+"
+      ],
+      "size": 312360,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "libsepol",
+      "version": "2.9-3.el8",
+      "purl": "pkg:rpm/oraclelinux/libsepol@2.9-3.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "LGPLv2+"
+      ],
+      "size": 761632,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "libsigsegv",
+      "version": "2.11-5.el8",
+      "purl": "pkg:rpm/oraclelinux/libsigsegv@2.11-5.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "GPLv2+"
+      ],
+      "size": 47034,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "libsmartcols",
+      "version": "2.32.1-42.el8_8",
+      "purl": "pkg:rpm/oraclelinux/libsmartcols@2.32.1-42.el8_8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "LGPLv2+"
+      ],
+      "size": 248490,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ],
+      "parent": "pkg:rpm/ol/util-linux@2.32.1-42.el8_8?os_name=oraclelinux\u0026os_version=8"
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "libsolv",
+      "version": "0.7.20-4.el8_7",
+      "purl": "pkg:rpm/oraclelinux/libsolv@0.7.20-4.el8_7?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "BSD"
+      ],
+      "size": 803747,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "libssh-config",
+      "version": "0.9.6-10.el8_8",
+      "purl": "pkg:rpm/oraclelinux/libssh-config@0.9.6-10.el8_8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "LGPLv2+"
+      ],
+      "size": 277,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ],
+      "parent": "pkg:rpm/ol/libssh@0.9.6-10.el8_8?os_name=oraclelinux\u0026os_version=8"
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "libssh",
+      "version": "0.9.6-10.el8_8",
+      "purl": "pkg:rpm/oraclelinux/libssh@0.9.6-10.el8_8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "LGPLv2+"
+      ],
+      "size": 521895,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "libstdc++",
+      "version": "8.5.0-18.0.6.el8",
+      "purl": "pkg:rpm/oraclelinux/libstdc++@8.5.0-18.0.6.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "GPLv3+",
+        "GPLv3+ with exceptions",
+        "GPLv2+ with exceptions",
+        "LGPLv2+",
+        "BSD"
+      ],
+      "size": 1857708,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ],
+      "parent": "pkg:rpm/ol/gcc@8.5.0-18.0.6.el8?os_name=oraclelinux\u0026os_version=8"
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "libtasn1",
+      "version": "4.13-4.el8_7",
+      "purl": "pkg:rpm/oraclelinux/libtasn1@4.13-4.el8_7?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "GPLv3+",
+        "LGPLv2+"
+      ],
+      "size": 165293,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "libtirpc",
+      "version": "1.1.4-8.el8",
+      "purl": "pkg:rpm/oraclelinux/libtirpc@1.1.4-8.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "SISSL",
+        "BSD"
+      ],
+      "size": 228750,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "ordinal": 10,
+          "digest": "sha256:2eb38469d663239c4b14de8bd835905076bcc440215630746ed4f6443f90de50",
+          "diff_id": "sha256:2eb38469d663239c4b14de8bd835905076bcc440215630746ed4f6443f90de50"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "libunistring",
+      "version": "0.9.9-3.el8",
+      "purl": "pkg:rpm/oraclelinux/libunistring@0.9.9-3.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "GPLv2+",
+        "LGPLv3+"
+      ],
+      "size": 1855932,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "libusbx",
+      "version": "1.0.23-4.el8",
+      "purl": "pkg:rpm/oraclelinux/libusbx@1.0.23-4.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "LGPLv2+"
+      ],
+      "size": 154139,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "libuuid",
+      "version": "2.32.1-42.el8_8",
+      "purl": "pkg:rpm/oraclelinux/libuuid@2.32.1-42.el8_8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "BSD"
+      ],
+      "size": 35104,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ],
+      "parent": "pkg:rpm/ol/util-linux@2.32.1-42.el8_8?os_name=oraclelinux\u0026os_version=8"
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "libverto",
+      "version": "0.3.2-2.el8",
+      "purl": "pkg:rpm/oraclelinux/libverto@0.3.2-2.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "MIT"
+      ],
+      "size": 26789,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "libxcrypt",
+      "version": "4.1.1-6.el8",
+      "purl": "pkg:rpm/oraclelinux/libxcrypt@4.1.1-6.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "LGPLv2+",
+        "BSD",
+        "Public Domain"
+      ],
+      "size": 185884,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "libxml2",
+      "version": "2.9.7-16.el8_8.1",
+      "purl": "pkg:rpm/oraclelinux/libxml2@2.9.7-16.el8_8.1?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "MIT"
+      ],
+      "size": 1753178,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "libyaml",
+      "version": "0.1.7-5.el8",
+      "purl": "pkg:rpm/oraclelinux/libyaml@0.1.7-5.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "MIT"
+      ],
+      "size": 136478,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "libzstd",
+      "version": "1.4.4-1.0.1.el8",
+      "purl": "pkg:rpm/oraclelinux/libzstd@1.4.4-1.0.1.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "BSD",
+        "GPLv2"
+      ],
+      "size": 698085,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ],
+      "parent": "pkg:rpm/ol/zstd@1.4.4-1.0.1.el8?os_name=oraclelinux\u0026os_version=8"
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "lua-libs",
+      "version": "5.3.4-12.el8",
+      "purl": "pkg:rpm/oraclelinux/lua-libs@5.3.4-12.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "MIT"
+      ],
+      "size": 247928,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ],
+      "parent": "pkg:rpm/ol/lua@5.3.4-12.el8?os_name=oraclelinux\u0026os_version=8"
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "lua",
+      "version": "5.3.4-12.el8",
+      "purl": "pkg:rpm/oraclelinux/lua@5.3.4-12.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "MIT"
+      ],
+      "size": 247928,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "lz4-libs",
+      "version": "1.8.3-3.el8_4",
+      "purl": "pkg:rpm/oraclelinux/lz4-libs@1.8.3-3.el8_4?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "GPLv2+",
+        "BSD"
+      ],
+      "size": 121071,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ],
+      "parent": "pkg:rpm/ol/lz4@1.8.3-3.el8_4?os_name=oraclelinux\u0026os_version=8"
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "lz4",
+      "version": "1.8.3-3.el8_4",
+      "purl": "pkg:rpm/oraclelinux/lz4@1.8.3-3.el8_4?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "GPLv2+",
+        "BSD"
+      ],
+      "size": 121071,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "microdnf",
+      "version": "3.8.0-2.el8",
+      "purl": "pkg:rpm/oraclelinux/microdnf@3.8.0-2.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "GPLv2+"
+      ],
+      "size": 123410,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "mpfr",
+      "version": "3.1.6-1.el8",
+      "purl": "pkg:rpm/oraclelinux/mpfr@3.1.6-1.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "LGPLv3+",
+        "GPLv3+",
+        "GFDL"
+      ],
+      "size": 612625,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "mysql-community-minimal",
+      "version": "8.1.0-1.el8",
+      "purl": "pkg:rpm/oraclelinux/mysql-community-minimal@8.1.0-1.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "Copyright (c) 2000, 2023, Oracle and/or its affiliates. Under GPLv2 license as shown in the Description field."
+      ],
+      "size": 177093933,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "ordinal": 10,
+          "digest": "sha256:2eb38469d663239c4b14de8bd835905076bcc440215630746ed4f6443f90de50",
+          "diff_id": "sha256:2eb38469d663239c4b14de8bd835905076bcc440215630746ed4f6443f90de50"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "mysql-community-server-minimal",
+      "version": "8.1.0-1.el8",
+      "purl": "pkg:rpm/oraclelinux/mysql-community-server-minimal@8.1.0-1.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "Copyright (c) 2000, 2023, Oracle and/or its affiliates. Under GPLv2 license as shown in the Description field."
+      ],
+      "size": 177093933,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "ordinal": 10,
+          "digest": "sha256:2eb38469d663239c4b14de8bd835905076bcc440215630746ed4f6443f90de50",
+          "diff_id": "sha256:2eb38469d663239c4b14de8bd835905076bcc440215630746ed4f6443f90de50"
+        }
+      ],
+      "parent": "pkg:rpm/ol/mysql-community-minimal@8.1.0-1.el8?os_name=oraclelinux\u0026os_version=8"
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "mysql-shell",
+      "version": "8.0.34-1.el8",
+      "purl": "pkg:rpm/oraclelinux/mysql-shell@8.0.34-1.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "GPLv2"
+      ],
+      "size": 204930228,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "ordinal": 13,
+          "digest": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860",
+          "diff_id": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "ncurses-base",
+      "version": "6.1-9.20180224.el8_8.1",
+      "purl": "pkg:rpm/oraclelinux/ncurses-base@6.1-9.20180224.el8_8.1?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "MIT"
+      ],
+      "size": 290089,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ],
+      "parent": "pkg:rpm/ol/ncurses@6.1-9.20180224.el8_8.1?os_name=oraclelinux\u0026os_version=8"
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "ncurses-libs",
+      "version": "6.1-9.20180224.el8_8.1",
+      "purl": "pkg:rpm/oraclelinux/ncurses-libs@6.1-9.20180224.el8_8.1?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "MIT"
+      ],
+      "size": 955936,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ],
+      "parent": "pkg:rpm/ol/ncurses@6.1-9.20180224.el8_8.1?os_name=oraclelinux\u0026os_version=8"
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "ncurses",
+      "version": "6.1-9.20180224.el8_8.1",
+      "purl": "pkg:rpm/oraclelinux/ncurses@6.1-9.20180224.el8_8.1?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "MIT"
+      ],
+      "size": 290089,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "nettle",
+      "version": "3.4.1-7.el8",
+      "purl": "pkg:rpm/oraclelinux/nettle@3.4.1-7.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "LGPLv3+",
+        "GPLv2+"
+      ],
+      "size": 572273,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "nghttp2",
+      "version": "1.33.0-5.el8_8",
+      "purl": "pkg:rpm/oraclelinux/nghttp2@1.33.0-5.el8_8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "MIT"
+      ],
+      "size": 168252,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "npth",
+      "version": "1.5-4.el8",
+      "purl": "pkg:rpm/oraclelinux/npth@1.5-4.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "LGPLv2+"
+      ],
+      "size": 47909,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "openldap",
+      "version": "2.4.46-18.el8",
+      "purl": "pkg:rpm/oraclelinux/openldap@2.4.46-18.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "OpenLDAP"
+      ],
+      "size": 1006603,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "openssl-libs",
+      "version": "1:1.1.1k-9.el8_7",
+      "purl": "pkg:rpm/oraclelinux/openssl-libs@1:1.1.1k-9.el8_7?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "OpenSSL",
+        "ASL 2.0"
+      ],
+      "size": 3769906,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ],
+      "parent": "pkg:rpm/ol/openssl@1:1.1.1k-9.el8_7?os_name=oraclelinux\u0026os_version=8"
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "openssl",
+      "version": "1:1.1.1k-9.el8_7",
+      "purl": "pkg:rpm/oraclelinux/openssl@1:1.1.1k-9.el8_7?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "OpenSSL",
+        "ASL 2.0"
+      ],
+      "size": 1185245,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "ordinal": 5,
+          "digest": "sha256:75f4b9038bd6e88a327c1d096b1bca95afc013b95b025fd39dbc8f24dc94f949",
+          "diff_id": "sha256:75f4b9038bd6e88a327c1d096b1bca95afc013b95b025fd39dbc8f24dc94f949"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "oraclelinux-release-el8",
+      "version": "1.0-32.el8",
+      "purl": "pkg:rpm/oraclelinux/oraclelinux-release-el8@1.0-32.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "GPLv2"
+      ],
+      "size": 22855,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "oraclelinux-release",
+      "version": "8:8.8-1.0.7.el8",
+      "purl": "pkg:rpm/oraclelinux/oraclelinux-release@8:8.8-1.0.7.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "GPL"
+      ],
+      "size": 4119036,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "p11-kit-trust",
+      "version": "0.23.22-1.el8",
+      "purl": "pkg:rpm/oraclelinux/p11-kit-trust@0.23.22-1.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "BSD"
+      ],
+      "size": 471001,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ],
+      "parent": "pkg:rpm/ol/p11-kit@0.23.22-1.el8?os_name=oraclelinux\u0026os_version=8"
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "p11-kit",
+      "version": "0.23.22-1.el8",
+      "purl": "pkg:rpm/oraclelinux/p11-kit@0.23.22-1.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "BSD"
+      ],
+      "size": 1637178,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "pcre2",
+      "version": "10.32-3.el8_6",
+      "purl": "pkg:rpm/oraclelinux/pcre2@10.32-3.el8_6?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "BSD"
+      ],
+      "size": 656742,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "pcre",
+      "version": "8.42-6.el8",
+      "purl": "pkg:rpm/oraclelinux/pcre@8.42-6.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "BSD"
+      ],
+      "size": 509947,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "popt",
+      "version": "1.18-1.el8",
+      "purl": "pkg:rpm/oraclelinux/popt@1.18-1.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "MIT"
+      ],
+      "size": 126618,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "publicsuffix-list-dafsa",
+      "version": "20180723-1.el8",
+      "purl": "pkg:rpm/oraclelinux/publicsuffix-list-dafsa@20180723-1.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "MPLv2.0"
+      ],
+      "size": 64502,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ],
+      "parent": "pkg:rpm/ol/publicsuffix-list@20180723-1.el8?os_name=oraclelinux\u0026os_version=8"
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "publicsuffix-list",
+      "version": "20180723-1.el8",
+      "purl": "pkg:rpm/oraclelinux/publicsuffix-list@20180723-1.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "MPLv2.0"
+      ],
+      "size": 64502,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "python39-libs",
+      "version": "3.9.16-1.module+el8.8.0+21116+ee8c18cf.1",
+      "purl": "pkg:rpm/oraclelinux/python39-libs@3.9.16-1.module+el8.8.0+21116+ee8c18cf.1?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "Python"
+      ],
+      "size": 33010745,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "ordinal": 13,
+          "digest": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860",
+          "diff_id": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860"
+        }
+      ],
+      "parent": "pkg:rpm/ol/python39@3.9.16-1.module+el8.8.0+21116+ee8c18cf.1?os_name=oraclelinux\u0026os_version=8"
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "python39-pip-wheel",
+      "version": "20.2.4-7.module+el8.6.0+20625+ee813db2",
+      "purl": "pkg:rpm/oraclelinux/python39-pip-wheel@20.2.4-7.module+el8.6.0+20625+ee813db2?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "MIT and Python and ASL 2.0 and BSD and ISC and LGPLv2 and MPLv2.0 and (ASL 2.0",
+        "BSD)"
+      ],
+      "size": 1160303,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "ordinal": 13,
+          "digest": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860",
+          "diff_id": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860"
+        }
+      ],
+      "parent": "pkg:rpm/ol/python3x-pip@20.2.4-7.module+el8.6.0+20625+ee813db2?os_name=oraclelinux\u0026os_version=8"
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "python39-pip",
+      "version": "20.2.4-7.module+el8.6.0+20625+ee813db2",
+      "purl": "pkg:rpm/oraclelinux/python39-pip@20.2.4-7.module+el8.6.0+20625+ee813db2?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "MIT and Python and ASL 2.0 and BSD and ISC and LGPLv2 and MPLv2.0 and (ASL 2.0",
+        "BSD)"
+      ],
+      "size": 8426756,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "ordinal": 13,
+          "digest": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860",
+          "diff_id": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860"
+        }
+      ],
+      "parent": "pkg:rpm/ol/python3x-pip@20.2.4-7.module+el8.6.0+20625+ee813db2?os_name=oraclelinux\u0026os_version=8"
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "python39-setuptools-wheel",
+      "version": "50.3.2-4.module+el8.5.0+20364+c7fe1181",
+      "purl": "pkg:rpm/oraclelinux/python39-setuptools-wheel@50.3.2-4.module+el8.5.0+20364+c7fe1181?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "MIT and (BSD",
+        "ASL 2.0)"
+      ],
+      "size": 562870,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "ordinal": 13,
+          "digest": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860",
+          "diff_id": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860"
+        }
+      ],
+      "parent": "pkg:rpm/ol/python3x-setuptools@50.3.2-4.module+el8.5.0+20364+c7fe1181?os_name=oraclelinux\u0026os_version=8"
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "python39-setuptools",
+      "version": "50.3.2-4.module+el8.5.0+20364+c7fe1181",
+      "purl": "pkg:rpm/oraclelinux/python39-setuptools@50.3.2-4.module+el8.5.0+20364+c7fe1181?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "MIT and (BSD",
+        "ASL 2.0)"
+      ],
+      "size": 4029247,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "ordinal": 13,
+          "digest": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860",
+          "diff_id": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860"
+        }
+      ],
+      "parent": "pkg:rpm/ol/python3x-setuptools@50.3.2-4.module+el8.5.0+20364+c7fe1181?os_name=oraclelinux\u0026os_version=8"
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "python39",
+      "version": "3.9.16-1.module+el8.8.0+21116+ee8c18cf.1",
+      "purl": "pkg:rpm/oraclelinux/python39@3.9.16-1.module+el8.8.0+21116+ee8c18cf.1?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "Python"
+      ],
+      "size": 24848,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "ordinal": 13,
+          "digest": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860",
+          "diff_id": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "python3x-pip",
+      "version": "20.2.4-7.module+el8.6.0+20625+ee813db2",
+      "purl": "pkg:rpm/oraclelinux/python3x-pip@20.2.4-7.module+el8.6.0+20625+ee813db2?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "MIT and Python and ASL 2.0 and BSD and ISC and LGPLv2 and MPLv2.0 and (ASL 2.0",
+        "BSD)"
+      ],
+      "size": 8426756,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "ordinal": 13,
+          "digest": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860",
+          "diff_id": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "python3x-setuptools",
+      "version": "50.3.2-4.module+el8.5.0+20364+c7fe1181",
+      "purl": "pkg:rpm/oraclelinux/python3x-setuptools@50.3.2-4.module+el8.5.0+20364+c7fe1181?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "MIT and (BSD",
+        "ASL 2.0)"
+      ],
+      "size": 4029247,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "ordinal": 13,
+          "digest": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860",
+          "diff_id": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "readline",
+      "version": "7.0-10.el8",
+      "purl": "pkg:rpm/oraclelinux/readline@7.0-10.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "GPLv3+"
+      ],
+      "size": 466321,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "redhat-release",
+      "version": "2:8.8-0.8.0.1.el8",
+      "purl": "pkg:rpm/oraclelinux/redhat-release@2:8.8-0.8.0.1.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "GPLv2"
+      ],
+      "size": 5520,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "rpm-libs",
+      "version": "4.14.3-26.el8",
+      "purl": "pkg:rpm/oraclelinux/rpm-libs@4.14.3-26.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "GPLv2+",
+        "LGPLv2+ with exceptions"
+      ],
+      "size": 735512,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ],
+      "parent": "pkg:rpm/ol/rpm@4.14.3-26.el8?os_name=oraclelinux\u0026os_version=8"
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "rpm",
+      "version": "4.14.3-26.el8",
+      "purl": "pkg:rpm/oraclelinux/rpm@4.14.3-26.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "GPLv2+"
+      ],
+      "size": 2087846,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "sed",
+      "version": "4.5-5.el8",
+      "purl": "pkg:rpm/oraclelinux/sed@4.5-5.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "GPLv3+"
+      ],
+      "size": 764950,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "setup",
+      "version": "2.12.2-9.el8",
+      "purl": "pkg:rpm/oraclelinux/setup@2.12.2-9.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "Public Domain"
+      ],
+      "size": 724747,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "shadow-utils",
+      "version": "2:4.6-17.el8",
+      "purl": "pkg:rpm/oraclelinux/shadow-utils@2:4.6-17.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "BSD",
+        "GPLv2+"
+      ],
+      "size": 4071237,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "sqlite-libs",
+      "version": "3.26.0-18.0.1.el8_8",
+      "purl": "pkg:rpm/oraclelinux/sqlite-libs@3.26.0-18.0.1.el8_8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "Public Domain"
+      ],
+      "size": 1166545,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ],
+      "parent": "pkg:rpm/ol/sqlite@3.26.0-18.0.1.el8_8?os_name=oraclelinux\u0026os_version=8"
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "sqlite",
+      "version": "3.26.0-18.0.1.el8_8",
+      "purl": "pkg:rpm/oraclelinux/sqlite@3.26.0-18.0.1.el8_8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "Public Domain"
+      ],
+      "size": 1166545,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "systemd-libs",
+      "version": "239-74.0.5.el8_8.5",
+      "purl": "pkg:rpm/oraclelinux/systemd-libs@239-74.0.5.el8_8.5?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "LGPLv2+",
+        "MIT"
+      ],
+      "size": 4677846,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ],
+      "parent": "pkg:rpm/ol/systemd@239-74.0.5.el8_8.5?os_name=oraclelinux\u0026os_version=8"
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "systemd",
+      "version": "239-74.0.5.el8_8.5",
+      "purl": "pkg:rpm/oraclelinux/systemd@239-74.0.5.el8_8.5?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "LGPLv2+",
+        "MIT"
+      ],
+      "size": 4677846,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "tar",
+      "version": "2:1.30-9.el8",
+      "purl": "pkg:rpm/oraclelinux/tar@2:1.30-9.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "GPLv3+"
+      ],
+      "size": 2876667,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "texinfo",
+      "version": "6.5-7.el8",
+      "purl": "pkg:rpm/oraclelinux/texinfo@6.5-7.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "GPLv3+"
+      ],
+      "size": 386098,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "tzdata",
+      "version": "2023c-1.el8",
+      "purl": "pkg:rpm/oraclelinux/tzdata@2023c-1.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "Public Domain"
+      ],
+      "size": 1788198,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "util-linux",
+      "version": "2.32.1-42.el8_8",
+      "purl": "pkg:rpm/oraclelinux/util-linux@2.32.1-42.el8_8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "LGPLv2+"
+      ],
+      "size": 344008,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "xz-libs",
+      "version": "5.2.4-4.el8_6",
+      "purl": "pkg:rpm/oraclelinux/xz-libs@5.2.4-4.el8_6?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "Public Domain"
+      ],
+      "size": 164959,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ],
+      "parent": "pkg:rpm/ol/xz@5.2.4-4.el8_6?os_name=oraclelinux\u0026os_version=8"
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "xz",
+      "version": "5.2.4-4.el8_6",
+      "purl": "pkg:rpm/oraclelinux/xz@5.2.4-4.el8_6?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "GPLv2+",
+        "Public Domain"
+      ],
+      "size": 424234,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "ordinal": 5,
+          "digest": "sha256:75f4b9038bd6e88a327c1d096b1bca95afc013b95b025fd39dbc8f24dc94f949",
+          "diff_id": "sha256:75f4b9038bd6e88a327c1d096b1bca95afc013b95b025fd39dbc8f24dc94f949"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "zlib",
+      "version": "1.2.11-21.el8_7",
+      "purl": "pkg:rpm/oraclelinux/zlib@1.2.11-21.el8_7?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "zlib",
+        "Boost"
+      ],
+      "size": 199967,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "rpm",
+      "namespace": "oraclelinux",
+      "name": "zstd",
+      "version": "1.4.4-1.0.1.el8",
+      "purl": "pkg:rpm/oraclelinux/zstd@1.4.4-1.0.1.el8?os_name=oraclelinux\u0026os_version=8",
+      "licenses": [
+        "BSD",
+        "GPLv2"
+      ],
+      "size": 698085,
+      "locations": [
+        {
+          "path": "/var/lib/rpm/Packages",
+          "digest": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d",
+          "diff_id": "sha256:d6fe63e8be63d078aeef9739f2c7ea101e6cc1a3f998d179af63a10e7f0f959d"
+        }
+      ]
+    },
+    {
+      "type": "generic",
+      "name": "python",
+      "version": "3.9.16",
+      "purl": "pkg:generic/python@3.9.16",
+      "locations": [
+        {
+          "path": "/usr/bin/python3.9",
+          "ordinal": 13,
+          "digest": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860",
+          "diff_id": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860"
+        },
+        {
+          "path": "/usr/lib64/libpython3.9.so.1.0",
+          "ordinal": 13,
+          "digest": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860",
+          "diff_id": "sha256:31058a3ed9088b537fec51223f43e5ce90e8f549773791923902bbeab472d860"
+        }
+      ]
+    }
+  ],
+  "descriptor": {
+    "name": "docker-scout",
+    "version": "0.20.0",
+    "sbom_version": "8"
+  }
+}
